@@ -19,11 +19,11 @@
         
         <div class="question-section" id="questionSection" style="display:none;">
           <p id="question"></p>
-          <button onclick="submitAnswer()">매우 그렇다</button>
-          <button onclick="submitAnswer()">그렇다</button>
-          <button onclick="submitAnswer()">보통이다</button>
-          <button onclick="submitAnswer()">아니다</button>
-          <button onclick="submitAnswer()">매우 아니다</button>
+          <button onclick="submitAnswer('매우 그렇다')">매우 그렇다</button>
+          <button onclick="submitAnswer('그렇다')">그렇다</button>
+          <button onclick="submitAnswer('보통이다')">보통이다</button>
+          <button onclick="submitAnswer('아니다')">아니다</button>
+          <button onclick="submitAnswer('매우 아니다')">매우 아니다</button>
         </div>
 
         <div class="confirm-section" id="confirmSection" style="display:none;">
@@ -73,7 +73,7 @@ function loadQuestion() {
     questionElement.innerText = questions[currentQuestionIndex];
 }
 
-function submitAnswer() {
+function submitAnswer(value) {
      answers.push(value);
     currentQuestionIndex++;
 
@@ -104,26 +104,22 @@ function resetTest() {
         function showResults() {
             const resultsSection = document.getElementById('results');
             const confirmSection = document.getElementById('confirmSection');
+          
             confirmSection.style.display = 'none';
             resultsSection.style.display = 'block';
             
             const name = document.getElementById('name').value;
-            const personality = getRandomPersonality(name);  
+            const gender = document.getElementById('gender').value;
+            const scores = calculateScores(answers);  // 이 부분이 누락된 것 같아 추가했습니다.
 
+            const personality = calculatePersonality(scores);
             const peperoResult = getPeperoTypeAndDescription(personality);
-            
-            function displayResults(scores) {
-            const resultsSection = document.getElementById("results");
-            if (resultsSection) {
-                const personality = calculatePersonality(scores);
-                const peperoResult = getPeperoTypeAndDescription(personality);
-                const name = document.getElementById("name").value;
-                const gender = document.getElementById("gender").value;
-                const resultString = `${name}님! 결과가 나왔어요! 당신의 성격은 ${gender}!!, \n당신의 빼빼로 유형은 "${peperoResult.type}" 입니다. \n\n${peperoResult.description}`;
+    
+                const resultString = `${name}님! 결과가 나왔어요! 당신의 성격은 ${gender}!!, 
+                          \n당신의 빼빼로 유형은 "${peperoResult.type}" 입니다. 
+                          \n\n${peperoResult.description}`;
                 resultsSection.innerHTML = `<p>${resultString}</p>`;
-                resultsSection.style.display = "block";
-            }
-        }
+}
 
       function calculatePersonality() {
             let personality = "";
