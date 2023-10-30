@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBTI 테스트</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>MBTI 테스트</h1>
+        <div id="chatbox"></div>
+        <button id="startButton" onclick="startMBTI()">MBTI 시작</button>
+        <div class="buttons" style="display: none;" id="answerButtons">
+            <button onclick="submitAnswer('매우 그렇다')">매우 그렇다</button>
+            <button onclick="submitAnswer('그렇다')">그렇다</button>
+            <button onclick="submitAnswer('보통이다')">보통이다</button>
+            <button onclick="submitAnswer('아니다')">아니다</button>
+            <button onclick="submitAnswer('매우 아니다')">매우 아니다</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

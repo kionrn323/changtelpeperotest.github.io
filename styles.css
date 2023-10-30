@@ -1,0 +1,24 @@
+#chatbox {
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 200px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+}
+
+.message {
+    margin: 5px 0;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.assistant {
+    background-color: #e1e1e1;
+    align-self: flex-start;
+}
+
+.user {
+    background-color: #2196F3;
+    color: white;
+    align-self: flex-end;
+}
