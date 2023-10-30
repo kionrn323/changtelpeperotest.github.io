@@ -39,6 +39,8 @@
 
     
 <script>
+  let currentQuestionIndex = 0;
+let answers = [];  // 사용자 응답 저장용 배열
  const questions = [
             "조용하고 한적한 장소보다 시끌벅적 핫한 장소에서의 데이트를 선호한다.",
             "개인의 시간보다 연인과 함께하는 시간이 더 소중하다.",
@@ -116,7 +118,7 @@ function resetTest() {
                 const peperoResult = getPeperoTypeAndDescription(personality);
                 const name = document.getElementById("name").value;
                 const gender = document.getElementById("gender").value;
-                const resultString = `${name}님! 결과가 나왔어요! 당신의 성겄은 ${gender}!!, \n당신의 빼빼로 유형은 "${peperoResult.type}" 입니다. \n\n${peperoResult.description}`;
+                const resultString = `${name}님! 결과가 나왔어요! 당신의 성격은 ${gender}!!, \n당신의 빼빼로 유형은 "${peperoResult.type}" 입니다. \n\n${peperoResult.description}`;
                 resultsSection.innerHTML = `<p>${resultString}</p>`;
                 resultsSection.style.display = "block";
             }
