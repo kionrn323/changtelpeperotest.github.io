@@ -53,6 +53,8 @@
     "자유롭고 즉흥적인 데이트를 선호한다.",
     "잔잔한 연애보다는 다이나믹한 연애를 선호한다.",
     ]
+    
+    
 const answerScores = {
             "매우 그렇다": 2,
             "그렇다": 1,
@@ -69,6 +71,7 @@ const answerScores = {
     startSection.style.display = 'none';
     questionSection.style.display = 'block';
     
+    currentQuestionIndex++;
     loadQuestion();
 }
 
