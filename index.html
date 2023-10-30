@@ -120,15 +120,6 @@ function resetTest() {
                           \n\n${peperoResult.description}`;
                 resultsSection.innerHTML = `<p>${resultString}</p>`;
 }
-    function calculateScores(answers) {
-    // 답변을 기반으로 scores를 계산하는 로직이 필요합니다.
-    // 아래는 단순한 예시입니다.
-    return {
-        E: answers.filter(answer => answer === '매우 그렇다').length,
-        I: answers.filter(answer => answer === '아니다').length,
-        // ... 나머지 항목들도 추가
-    };
-}
 
       function calculatePersonality(scores) {
             let personality = "";
